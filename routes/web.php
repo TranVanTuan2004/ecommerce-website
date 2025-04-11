@@ -1,5 +1,11 @@
 <?php
 
+
+use App\Http\Controllers\UserController;
+
+
+
+
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +28,10 @@ Route::post('dashboard/brand', [BrandController::class, 'store'])->name('brand.s
 Route::get('dashboard/brand/{id}/edit', [BrandController::class, 'edit'])->name('brand.edit');
 Route::put('dashboard/brand/{id}', [BrandController::class, 'update'])->name('brand.update');
 Route::delete('dashboard/brand/{id}', [BrandController::class, 'destroy'])->name('brand.destroy');
+
+
+//Route user
+Route::resource('users', UserController::class);
 
 
 
