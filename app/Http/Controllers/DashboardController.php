@@ -11,4 +11,10 @@ class DashboardController extends Controller
         $template = 'admin.home.home';
         return view('admin.dashboard.layout', compact(['template']));
     }
+
+    public function __construct()
+{
+    $this->middleware('auth');
+}
+
 }
